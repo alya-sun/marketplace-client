@@ -1,0 +1,228 @@
+.profile {
+    padding: 5px 30px;
+    padding-bottom: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.orderList {
+    display: grid;
+    gap: 20px;
+}
+
+.order {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.orderHeader h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.statusConfirmed {
+    background-color: #d1fae5;
+    color: #10b981;
+}
+
+.statusCancelled {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.order p {
+    margin: 8px 0;
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+.order h4 {
+    margin: 15px 0 8px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.productList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.productList li {
+    padding: 8px 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.productList li:last-child {
+    border-bottom: none;
+}
+
+.cancelButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.cancelButton:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+.cancelButton:active {
+    transform: scale(0.95);
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loadingContainer p {
+    margin-top: 15px;
+    color: #3b82f6;
+    font-size: 1.1rem;
+}
+
+.error {
+    text-align: center;
+    color: #ef4444;
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: #fee2e2;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.noOrders {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.2rem;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+.success {
+    background-color: #10b981;
+    color: white;
+}
+
+.error {
+    background-color: #ef4444;
+    color: white;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .profile {
+        padding: 20px 10px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .order {
+        padding: 15px;
+    }
+
+    .orderHeader h3 {
+        font-size: 1.3rem;
+    }
+
+    .status {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .order p {
+        font-size: 0.9rem;
+    }
+
+    .productList li {
+        font-size: 0.85rem;
+    }
+
+    .cancelButton {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
